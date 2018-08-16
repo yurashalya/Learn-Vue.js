@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+</head>
+<body>
+	<div id="app">
+		<h1 v-show="isVisible">Visible</h1>
+		<h2 v-show="!isVisible">Not Visible</h2>
+		<button @click="isVisible = !isVisible">Toogle</button>
+		<hr>
+
+		<h2 v-if="char=== 'a'">A</h2>
+		<h2 v-else-if="char=== 'b'">B</h2>
+		<h2 v-else-if="char=== 'c'">C</h2>
+		<h2 v-else="">Not Math</h2>
+
+		<input type="text" v-model="char">
+		<hr>
+		
+		<template v-if="isVisible">
+			<h2>Im am title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, earum.</p>
+		</template>
+		<template v-else="">
+			<h1 style="color:red">Im am title</h1>
+			<p style="color:red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet.</p>
+		</template>
+		
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el: "#app",
+			data: {
+				isVisible: false,
+				char: 'a',
+			},
+			methods: {
+				
+			}
+		});
+	</script>
+</body>
+</html>
