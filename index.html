@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+</head>
+<body>
+	<div id="app">
+		<h1> String:{{ message }}</h1>
+		<h1> Sum: {{ 1 + 2 }} </h1>
+		<input type="text" v-model="message">
+		<pre>
+			{{ $data | json }}
+		</pre>
+		<div class="student">
+			<h1> {{ sayHello() }}</h1>
+			<h1> Age: {{ age }}</h1>
+			<h1> If Statemetn: {{ isStudent ? 'I am Student' : 'I am not a Student' }}</h1>
+			<h1> Functions: {{ string.split('').reverse().join('')}}</h1>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el: "#app",
+			data: {
+				message: "Vue.js learn ",
+				age: "22",
+				isStudent: true,
+				name: 'Yura',
+				string: 'My name is Yura'
+			},
+			methods: {
+				sayHello: function(){
+					return "Hello my name is" + this.name
+				}
+			}
+		});
+	</script>
+</body>
+</html>
